@@ -1,11 +1,20 @@
 {
-  "name": "CSS Color Books",
+  "name": "colorly",
   "version": "0.0.1",
-  "description": "",
+  "description": "Comprehensive library of color books from several color systems - implemented in Sass, LESS, Stylus, JSON, and CSV.",
   "scripts": {
-    "build": "./build.sh"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies" : {
+    "grunt": "latest",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-shell": "*",
+    "matchdep": "*"
+  }
 }

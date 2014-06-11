@@ -45,7 +45,7 @@ if ( process.argv[2] ) {
 	records.forEach(function( color ){
 
 		// push another line of html
-		records_html.push( '<div class="color visible" style="background-color: '+color.hex+';"><span>'+color.label+'</span></div>' );
+		records_html.push( '<div class="swatch" style="background-color: '+color.hex+';"><span>'+color.label+'</span></div>' );
 		
 		// push another scss array value
 		records_scss.push( '("'+color.label+'" '+color.hex+')' );

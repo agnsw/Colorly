@@ -9,21 +9,21 @@ module.exports = function(grunt) {
 
 		// watch for changes and trigger compass, jshint, uglify and livereload
 		watch: {
-			sass: {
-				files: ['scss/_pantone.scss','scss/test.scss'],
+			sass_process: {
+				files: ['scss/*.scss'],
 				tasks: ['sass']
 			},
-			stylus: {
-				files: ['stylus/_pantone.styl','stylus/test.styl'],
+			stylus_process: {
+				files: ['stylus/*.styl'],
 				tasks: ['stylus']
 			},
-			less: {
-				files: ['less/_pantone.less','less/test.less'],
+			less_process: {
+				files: ['less/*.less'],
 				tasks: ['less']
 			},
 			build: {
-				files: ['_dev/*.*','json/*.json'],
-				tasks: ['shell']
+				files: ['_tpl/*.*','_json/*.json'],
+				tasks: ['shell','less','sass','stylus']
 			}
 		},
 
@@ -68,8 +68,8 @@ module.exports = function(grunt) {
 
 		// generate the sass and html files with node scripts
 		shell: {
-			build: {
-				command: 'node _dev/build.js'
+			build_cmd: {
+				command: './build.sh'
 			}
 		}
 
