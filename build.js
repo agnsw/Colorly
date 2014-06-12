@@ -73,7 +73,7 @@ var do_file = function( key ) {
 			records_scss.push( '("'+color.label+'" '+color.hex+')' );
 			
 			// push another less array value
-			records_less.push( '@'+files[key].filename+'-'+color.label+': '+color.hex+';' );
+			records_less.push( '@'+filename+'-'+color.label+': '+color.hex+';' );
 			
 			// push another xml record
 			records_csv.push( '"'+color.name+'","'+color.label+'","'+color.hex+'"' );
@@ -82,13 +82,16 @@ var do_file = function( key ) {
 
 
 		// stylus files
-		files_less.push( "\n// " + files[key].title + '\n@import "book-'+files[key].filename+'.less";' );
+		files_less.push( "\n// " + files[key].title + '\n@import "book-'+filename+'.less";' );
 
 		// stylus files
-		files_scss.push( "\n// " + files[key].title + '\n@import "book-'+files[key].filename+'";' );
+		files_scss.push( "\n// " + files[key].title + '\n@import "book-'+filename+'";' );
 
 		// stylus files
-		files_stylus.push( "\n// " + files[key].title + '\n@import "book-'+files[key].filename+'.styl"' );
+		files_stylus.push( "\n// " + files[key].title + '\n@import "book-'+filename+'.styl"' );
+
+		// stylus files
+		files_index.push( '<li><a rel="' + filename + '">' + files[key].title + ' <span>' + records.length + ' colors</span></a></li>' );
 
 
 		// write out the csv file
@@ -150,7 +153,7 @@ var do_file = function( key ) {
 		// delay a tiny bit before grabbing the next file
 		setTimeout(function(){
 			do_file( key+1 );
-		}, 10 );
+		}, 20 );
 
 	
 	} else {
@@ -186,7 +189,14 @@ var do_file = function( key ) {
 				console.log('> less/colorly.less created...');
 			});
 
-		}, 10 );
+
+			// write out the LESS book file
+			fs.writeFile( 'index.html', tpl_index.replace( "{{colors}}", '<ul>' + files_index.join("\n") + '</ul>' ), function( err ){
+				if (err) throw err;
+				console.log('> less/colorly.less created...');
+			});
+
+		}, 20 );
 
 	}
 
