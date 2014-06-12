@@ -7,8 +7,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies" : {
+  "dependencies": {
+    "async": "~0.9.0"
+  },
+  "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-sass": "*",
     "grunt-contrib-stylus": "*",

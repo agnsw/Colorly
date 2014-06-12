@@ -10,19 +10,19 @@ module.exports = function(grunt) {
 		// watch for changes and trigger compass, jshint, uglify and livereload
 		watch: {
 			sass_process: {
-				files: ['scss/*.scss'],
+				files: ['test/scss/*.scss'],
 				tasks: ['sass']
 			},
 			stylus_process: {
-				files: ['stylus/*.styl'],
+				files: ['test/stylus/*.styl'],
 				tasks: ['stylus']
 			},
 			less_process: {
-				files: ['less/*.less'],
+				files: ['test/less/*.less'],
 				tasks: ['less']
 			},
 			build: {
-				files: ['_tpl/*.*','_json/*.json'],
+				files: ['_dev/*.*','json/*.json','build.*'],
 				tasks: ['shell','less','sass','stylus']
 			}
 		},
