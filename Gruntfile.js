@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		// watch for changes and trigger compass, jshint, uglify and livereload
 		watch: {
 			sass_process: {
-				files: ['test/scss/*.scss'],
+				files: ['test/scss/*.scss','_dev/demo.scss'],
 				tasks: ['sass']
 			},
 			stylus_process: {
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 				tasks: ['less']
 			},
 			build: {
-				files: ['_dev/*.*','json/*.json','build.*'],
+				files: ['_dev/_*.{js|}','json/*.json','build.*'],
 				tasks: ['shell:build','less','sass','stylus']
 			},
 			tests: {
@@ -39,7 +39,8 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: { 
-					'test/scss/test.css': 'test/scss/test.scss'
+					'test/scss/test.css': 'test/scss/test.scss',
+					'demo.css': '_dev/demo.scss'
 				}
 			}
 		},

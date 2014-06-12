@@ -3,13 +3,8 @@
 <link href="demo.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width">
 
-<div class="header">
-	
-	<h1>Colorly</h1>
-
-</div>
-
-<div class="color-files"><ul><li><a rel="anpa">ANPA <span>300 colors</span></a></li>
+<div class="book-list">
+	<ul><li><a rel="anpa">ANPA <span>300 colors</span></a></li>
 <li><a rel="dic">DIC <span>1280 colors</span></a></li>
 <li><a rel="focoltone">Focoltone <span>830 colors</span></a></li>
 <li><a rel="hks-e-process">HKS E Process <span>86 colors</span></a></li>
@@ -34,9 +29,25 @@
 <li><a rel="pantone-solid-uncoated">Pantone Solid Uncoated <span>1137 colors</span></a></li>
 <li><a rel="toyo-94-color-finder">TOYO 94 Color Finder <span>1050 colors</span></a></li>
 <li><a rel="toyo-color-finder">TOYO Color Finder <span>1079 colors</span></a></li>
-<li><a rel="trumatch">TRUMATCH <span>2092 colors</span></a></li></ul></div>
+<li><a rel="trumatch">TRUMATCH <span>2092 colors</span></a></li></ul>
+</div>
 
-<div class="color-viewer"></div>
+<div class="book-usage">
+	<div class="half">
+		<h4>Sass & Stylus Usage</h4>
+		<p>For Sass & Stylus, the books are accessed through functions.</p>
+		<code><span class="function">anpa</span>( <span class="quiet">[color]</span> )</code>
+	</div>
+	<div class="half">
+		<h4>LESS Usage</h4>
+		<p>For LESS, we're functionless, so we just use variables.</p>
+		<code>@<span class="function">anpa</span>-<span class="quiet">[color]</span></code>
+	</div>
+</div>
+
+<div class="book-viewer">
+	
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
@@ -44,6 +55,14 @@
 $(function(){
 
 	// ajaxy stuffs go here.
+	$( '.book-list a' ).click(function(){
+
+		var book = $( this ).attr( 'rel' );
+
+		$( '.book-viewer' ).load( 'book/'+book+'.html' );
+		$( '.function' ).html( book );
+
+	});
 
 });
 
