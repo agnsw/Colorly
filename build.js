@@ -16,7 +16,18 @@ var tpl_html = fs.readFileSync( dir_tpl+"book.html", "utf8" );
 var tpl_stylus = fs.readFileSync( dir_tpl+"book.styl", "utf8" );
 var tpl_scss = fs.readFileSync( dir_tpl+"book.scss", "utf8" );
 var tpl_less = fs.readFileSync( dir_tpl+"book.less", "utf8" );
-var tpl_index = fs.readFileSync( dir_tpl+"book.less", "utf8" );
+
+// open the index template files
+var tpl_index = fs.readFileSync( dir_tpl+"index.html", "utf8" );
+
+
+
+// arrays for each index file
+var files_stylus = [], 
+	files_scss = [],
+	files_less = [],
+	files_index = [];
+
 
 
 // Loop through our files, limiting the number to process at once
@@ -53,6 +64,8 @@ var do_file = function( key ) {
 		// loop through all the colors in this file.
 		records.forEach(function( color ){
 
+			var hex = color.hex.replace( '/' )
+
 			// push another line of html
 			records_html.push( '<div class="swatch" style="background-color: '+color.hex+';"><span>'+color.label+'</span></div>' );
 			
@@ -60,12 +73,22 @@ var do_file = function( key ) {
 			records_scss.push( '("'+color.label+'" '+color.hex+')' );
 			
 			// push another less array value
-			records_less.push( '@pantone-'+color.label+': '+color.hex+';' );
+			records_less.push( '@'+files[key].filename+'-'+color.label+': '+color.hex+';' );
 			
 			// push another xml record
 			records_csv.push( '"'+color.name+'","'+color.label+'","'+color.hex+'"' );
 
 		});
+
+
+		// stylus files
+		files_less.push( "\n// " + files[key].title + '\n@import "book-'+files[key].filename+'.less";' );
+
+		// stylus files
+		files_scss.push( "\n// " + files[key].title + '\n@import "book-'+files[key].filename+'";' );
+
+		// stylus files
+		files_stylus.push( "\n// " + files[key].title + '\n@import "book-'+files[key].filename+'.styl"' );
 
 
 		// write out the csv file
@@ -123,19 +146,46 @@ var do_file = function( key ) {
 			}
 		);
 
+
+		// delay a tiny bit before grabbing the next file
 		setTimeout(function(){
 			do_file( key+1 );
 		}, 10 );
+
 	
 	} else {
 
+		// once we're done creating book files, generate
+		// the index file after another short delay.
 		setTimeout(function(){
 			
+			// start outputting main file generation progress
 			console.log( "" );
 			console.log( "-------------------------------------------------------------------" );
 			console.log( "  Main Files" );
 			console.log( "-------------------------------------------------------------------" );
 			
+
+			// write out the Sass book file
+			fs.writeFile( 'scss/_colorly.scss', files_scss.join("\n"), function( err ){
+				if (err) throw err;
+				console.log('> scss/_colorly.scss created...');
+			});
+
+
+			// write out the Stylus book file
+			fs.writeFile( 'stylus/colorly.styl', files_stylus.join("\n"), function( err ){
+				if (err) throw err;
+				console.log('> stylus/colorly.styl created...');
+			});
+
+
+			// write out the LESS book file
+			fs.writeFile( 'less/colorly.less', files_less.join("\n"), function( err ){
+				if (err) throw err;
+				console.log('> less/colorly.less created...');
+			});
+
 		}, 10 );
 
 	}
@@ -143,6 +193,8 @@ var do_file = function( key ) {
 };
 
 
+
+// aaaand start the loop
 do_file( 0 );
 
 

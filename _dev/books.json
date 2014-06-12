@@ -1,26 +1,106 @@
 [
-	{ "filename": "anpa", "title": "ANPA" },
-	{ "filename": "dic", "title": "DIC" },
-	{ "filename": "focoltone", "title": "Focoltone" },
-	{ "filename": "hks-e-process", "title": "HKS E Process" },
-	{ "filename": "hks-e", "title": "HKS E" },
-	{ "filename": "hks-k-process", "title": "HKS K Process" },
-	{ "filename": "hks-k", "title": "HKS K" },
-	{ "filename": "hks-n-process", "title": "HKS N Process" },
-	{ "filename": "hks-n", "title": "HKS N" },
-	{ "filename": "hks-z-process", "title": "HKS Z Process" },
-	{ "filename": "hks-z", "title": "HKS Z" },
-	{ "filename": "pantone-p-cmyk-coated", "title": "Pantone+ CMYK Coated" },
-	{ "filename": "pantone-p-cmyk-uncoated", "title": "Pantone+ CMYK Uncoated" },
-	{ "filename": "pantone-p-color-bridge-coated", "title": "Pantone+ Color Bridge Coated" },
-	{ "filename": "pantone-p-color-bridge-uncoated", "title": "Pantone+ Color Bridge Uncoated" },
-	{ "filename": "pantone-p-metallic-coated", "title": "Pantone+ Metallic Coated" },
-	{ "filename": "pantone-p-pastels-neons-coated", "title": "Pantone+ Pastels & Neons Coated" },
-	{ "filename": "pantone-p-pastels-neons-uncoated", "title": "Pantone+ Pastels & Neons Uncoated" },
-	{ "filename": "pantone-p-premium-metallics-coated", "title": "Pantone+ Premium Metallics Coated" },
-	{ "filename": "pantone-p-solid-coated", "title": "Pantone+ Solid Coated" },
-	{ "filename": "pantone-p-solid-uncoated", "title": "Pantone+ Solid Uncoated" },
-	{ "filename": "toyo-94-color-finder", "title": "TOYO 94 Color Finder" },
-	{ "filename": "toyo-color-finder", "title": "TOYO Color Finder" },
-	{ "filename": "trumatch", "title": "TRUMATCH" }
+  { 
+    "filename": "anpa", 
+    "title": "ANPA"
+  },
+  { 
+    "filename": "dic", 
+    "title": "DIC" 
+  },
+  { 
+    "filename": "focoltone", 
+    "title": "Focoltone" 
+  },
+  { 
+    "filename": "hks-e-process", 
+    "title": "HKS E Process" 
+  },
+  { 
+    "filename": "hks-e", 
+    "title": "HKS E"
+  },
+  { 
+    "filename": "hks-k-process", 
+    "title": "HKS K Process" 
+  },
+  { 
+    "filename": "hks-k", 
+    "title": "HKS K" 
+  },
+  { 
+    "filename": "hks-n-process", 
+    "title": "HKS N Process" 
+  },
+  { 
+    "filename": "hks-n", 
+    "title": "HKS N" 
+  },
+  { 
+    "filename": "hks-z-process", 
+    "title": "HKS Z Process" 
+  },
+  { 
+    "filename": "hks-z", 
+    "title": "HKS Z" 
+  },
+  { 
+    "filename": "pantone-p-cmyk-coated", 
+    "title": "Pantone+ CMYK Coated" 
+  },
+  { 
+    "filename": "pantone-p-cmyk-uncoated", 
+    "title": "Pantone+ CMYK Uncoated" 
+  },
+  { 
+    "filename": "pantone-p-color-bridge-coated", 
+    "title": "Pantone+ Color Bridge Coated" 
+  },
+  { 
+    "filename": "pantone-p-color-bridge-uncoated", 
+    "title": "Pantone+ Color Bridge Uncoated" 
+  },
+  { 
+    "filename": "pantone-p-metallic-coated", 
+    "title": "Pantone+ Metallic Coated" 
+  },
+  { 
+    "filename": "pantone-p-pastels-neons-coated", 
+    "title": "Pantone+ Pastels & Neons Coated" 
+  },
+  { 
+    "filename": "pantone-p-pastels-neons-uncoated", 
+    "title": "Pantone+ Pastels & Neons Uncoated" 
+  },
+  { 
+    "filename": "pantone-p-premium-metallics-coated", 
+    "title": "Pantone+ Premium Metallics Coated" 
+  },
+  { 
+    "filename": "pantone-p-solid-coated", 
+    "title": "Pantone+ Solid Coated" 
+  },
+  { 
+    "filename": "pantone-p-solid-uncoated", 
+    "title": "Pantone+ Solid Uncoated" 
+  },
+  { 
+    "filename": "pantone-solid-coated", 
+    "title": "Pantone Solid Coated" 
+  },
+  { 
+    "filename": "pantone-solid-uncoated", 
+    "title": "Pantone Solid Uncoated" 
+  },
+  { 
+    "filename": "toyo-94-color-finder", 
+    "title": "TOYO 94 Color Finder" 
+  },
+  { 
+    "filename": "toyo-color-finder", 
+    "title": "TOYO Color Finder" 
+  },
+  { 
+    "filename": "trumatch", 
+    "title": "TRUMATCH"
+  }
 ]

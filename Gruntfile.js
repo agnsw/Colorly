@@ -23,7 +23,11 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: ['_dev/*.*','json/*.json','build.*'],
-				tasks: ['shell','less','sass','stylus']
+				tasks: ['shell:build','less','sass','stylus']
+			},
+			tests: {
+				files: ['test/**/*.{scss|less|styl|js}'],
+				tasks: ['shell:test']
 			}
 		},
 
@@ -35,9 +39,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: { 
-					// process demo styles
-					'demo.css': '_dev/demo.scss',
-					'scss/test.css': 'scss/test.scss',
+					'test/scss/test.css': 'test/scss/test.scss'
 				}
 			}
 		},
@@ -47,7 +49,7 @@ module.exports = function(grunt) {
 		stylus: {
 			compile: {
 				files: {
-					'stylus/test.css': 'stylus/test.styl',
+					'test/stylus/test.css': 'test/stylus/test.styl'
 				}
 			}
 		},
@@ -60,7 +62,7 @@ module.exports = function(grunt) {
 					compress: true,
 				},
 				files: {
-					"less/test.css": "less/test.less"
+					"test/less/test.css": "test/less/test.less"
 				}
 			},
 		},
@@ -68,12 +70,21 @@ module.exports = function(grunt) {
 
 		// generate the sass and html files with node scripts
 		shell: {
-			build_cmd: {
+			build: {
 				command: './build.sh'
+			},
+			test: {
+				command: 'mocha'
 			}
 		}
 
 	});
+	
+	// test task
+	grunt.registerTask('test', ['shell:test']);
+	
+	// build task
+	grunt.registerTask('build', ['shell:build','stylus','less','shell']);
 
 	// register task
 	grunt.registerTask('default', ['watch']);
