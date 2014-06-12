@@ -4,7 +4,10 @@
 <meta name="viewport" content="width=device-width">
 
 <div class="book-list">
-	{{colors}}
+	<ul>
+		<li><a class="book-usage-toggle">Show/Hide Usage</a></li>
+		{{colors}}
+	</ul>
 </div>
 
 <div class="book-usage">
@@ -34,8 +37,16 @@ $(function(){
 
 		var book = $( this ).attr( 'rel' );
 
-		$( '.book-viewer' ).load( 'book/'+book+'.html' );
-		$( '.function' ).html( book );
+		if ( typeof book !== 'undefined' ) {
+			$( '.book-viewer' ).load( 'book/'+book+'.html' );
+			$( '.function' ).html( book );
+		}
+
+	});
+
+	$( '.book-usage-toggle' ).click(function(){
+
+		$( '.book-usage' ).slideToggle( 500 );
 
 	});
 

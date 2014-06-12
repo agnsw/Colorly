@@ -93,6 +93,19 @@ body {
 				color: #eee;
 				background: #666;
 			}
+
+			&.book-usage-toggle {
+				display: none;
+
+				@include respond-to( 768px ) {
+					display: block;
+					background-color: #ddd;
+					color: #444;
+					font-size: 12px;
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
 		}
 	}
 }
@@ -101,6 +114,8 @@ body {
 
 // usage instruction styles
 .book-usage {
+	display: none;
+	position: relative;
 	padding: 0 30px 30px;
 	@include clearfix;
 
@@ -124,6 +139,10 @@ body {
 		.half {
 			float: left;
 			width: 50%;
+		}
+
+		code {
+			padding: 5px 20px;
 		}
 	}
 }

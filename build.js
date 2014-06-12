@@ -191,7 +191,7 @@ var do_file = function( key ) {
 
 
 			// write out the LESS book file
-			fs.writeFile( 'index.html', tpl_index.replace( "{{colors}}", '<ul>' + files_index.join("\n") + '</ul>' ), function( err ){
+			fs.writeFile( 'index.html', tpl_index.replace( "{{colors}}", files_index.join("\n") ), function( err ){
 				if (err) throw err;
 				console.log('> less/colorly.less created...');
 			});
