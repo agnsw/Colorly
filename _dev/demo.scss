@@ -1,5 +1,14 @@
 
 
+// some maths
+$usage_height_768: 220px;
+$usage_height_960: 140px;
+
+$usage_left_768: 30%;
+$usage_left_1220: 20%;
+
+
+
 /// basic font stuffs
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300,700);
 
@@ -39,13 +48,24 @@
 body {
 	margin: 0;
 	@include font;
+	transition: padding-top 500ms ease-in-out;
 
 	@include respond-to( 768px ) {
-		padding-left: 30%;
+		padding-left: $usage_left_768;
+
+		&.with-usage {
+			padding-top: $usage_height_768;
+		}
+	}
+
+	@include respond-to( 960px ) {
+		&.with-usage {
+			padding-top: $usage_height_960;
+		}
 	}
 
 	@include respond-to( 1220px ) {
-		padding-left: 20%;
+		padding-left: $usage_left_1220;
 	}
 }
 
@@ -115,39 +135,58 @@ body {
 // usage instruction styles
 .book-usage {
 	display: none;
-	position: relative;
-	padding: 0 30px 30px;
-	@include clearfix;
+	transition: height 500ms ease-in-out;
+	
+	@include respond-to( 768px ) {
+		display: block;
+		position: fixed;
+		background: white;
+		top: 0;
+		right: 0;
+		left: $usage_left_768;
+		height: 0;
+		padding: 0 30px;
+		overflow: hidden;
 
-	h4 {
-		padding: 0;
-		color: #aaa;
-		text-transform: uppercase;
-		font-size: 14px;
-		padding-top: 15px;
-	}
+		&.visible {
+			height: $usage_height_768;
+		}
 
-	code {
-		color: #62a70f;
-	}
+		h4 {
+			padding: 0;
+			color: #aaa;
+			text-transform: uppercase;
+			font-size: 14px;
+			padding-top: 15px;
+		}
 
-	.quiet {
-		color: #aaa;
-	}
+		code {
+			color: #62a70f;
+		}
 
-	.half {
-		text-align: center;
+		.quiet {
+			color: #aaa;
+		}
+
+		.half {
+			text-align: center;
+		}
 	}
 
 	@include respond-to( 960px ) {
+		
+		&.visible {
+			height: $usage_height_960;
+		}
+
 		.half {
 			float: left;
 			width: 50%;
 		}
+	}
 
-		code {
-			padding: 5px 20px;
-		}
+	@include respond-to( 1220px ) {
+		left: $usage_left_1220;
 	}
 }
 
@@ -171,6 +210,7 @@ body {
 	padding: 20px;
 	text-align: center;
 	overflow: hidden;
+	cursor: pointer;
 
 	@include respond-to( 480px ) {
 		padding: 30px 0;

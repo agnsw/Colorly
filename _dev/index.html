@@ -13,13 +13,11 @@
 <div class="book-usage">
 	<div class="half">
 		<h4>Sass & Stylus Usage</h4>
-		<p>For Sass & Stylus, the books are accessed through functions.</p>
-		<code><span class="function">anpa</span>( <span class="quiet">[color]</span> )</code>
+		<code><span class="function quiet">[book-name]</span>( <span class="selected-color quiet">[color]</span> )</code>
 	</div>
 	<div class="half">
 		<h4>LESS Usage</h4>
-		<p>For LESS, we're functionless, so we just use variables.</p>
-		<code>@<span class="function">anpa</span>-<span class="quiet">[color]</span></code>
+		<code>@<span class="function quiet">[book-name]</span>-<span class="selected-color quiet">[color]</span></code>
 	</div>
 </div>
 
@@ -30,6 +28,32 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
 
+var usage = $( '.book-usage' );
+var body = $( 'body' );
+
+var toggle_usage = function(){
+	if ( !usage.hasClass( 'visible' ) ) {
+		show_usage();
+	} else {
+		hide_usage();
+	}
+};
+
+var show_usage = function(){
+	console.log( 'toggling it' );
+	if ( !usage.hasClass( 'visible' ) ) {
+		usage.addClass( 'visible' );
+		body.addClass( 'with-usage' );
+	}
+};
+
+var hide_usage = function(){
+	if ( usage.hasClass( 'visible' ) ) {
+		usage.removeClass( 'visible' );
+		body.removeClass( 'with-usage' );
+	}
+};
+
 $(function(){
 
 	// ajaxy stuffs go here.
@@ -38,17 +62,20 @@ $(function(){
 		var book = $( this ).attr( 'rel' );
 
 		if ( typeof book !== 'undefined' ) {
-			$( '.book-viewer' ).load( 'book/'+book+'.html' );
-			$( '.function' ).html( book );
+			$( '.book-viewer' ).load( 'book/'+book+'.html', function(){
+				$( '.function' ).html( book ).removeClass( 'quiet' );
+				
+				$( '.book-viewer .swatch' ).click(function(){
+					$( '.selected-color' ).html( $(this).html() ).removeClass( 'quiet' );
+					show_usage();
+				});
+			});
 		}
 
-	});
-
-	$( '.book-usage-toggle' ).click(function(){
-
-		$( '.book-usage' ).slideToggle( 500 );
 
 	});
+
+	$( '.book-usage-toggle' ).click( toggle_usage );
 
 });
 
