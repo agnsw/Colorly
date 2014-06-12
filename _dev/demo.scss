@@ -135,6 +135,10 @@ body {
 		color: #aaa;
 	}
 
+	.half {
+		text-align: center;
+	}
+
 	@include respond-to( 960px ) {
 		.half {
 			float: left;
