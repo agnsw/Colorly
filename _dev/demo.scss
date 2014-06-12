@@ -187,16 +187,20 @@ body {
 		width: 20%;
 	}
 
-	@include respond-to( 1150px ) {
+	@include respond-to( 1024px ) {
 		width: 16.6666%;
 	}
 
-	@include respond-to( 1440px ) {
+	@include respond-to( 1240px ) {
 		width: 14.2857%;
 	}
 
-	@include respond-to( 1680px ) {
+	@include respond-to( 1440px ) {
 		width: 12.5%;
+	}
+
+	@include respond-to( 1680px ) {
+		width: 11.11%;
 	}
 
 
