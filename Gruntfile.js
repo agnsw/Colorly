@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 				tasks: ['less']
 			},
 			build: {
-				files: ['_dev/_*.{js|}','json/*.json','build.*'],
+				files: ['_dev/book.*','_dev/index.html','json/*.json','build.*'],
 				tasks: ['shell:build','less','sass','stylus']
 			},
 			tests: {
