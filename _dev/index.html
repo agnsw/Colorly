@@ -5,7 +5,9 @@
 
 <div class="book-list">
 	<ul>
-		<li><a class="book-usage-toggle">Show/Hide Usage</a></li>
+		<li><a href="http://github.com/jpederson/Colorly" class="download">Download Colorly</a></li>
+		<li><a class="book-usage-toggle">Usage Instructions</a></li>
+		<li class="label">- select a color book below -</li>
 		{{colors}}
 	</ul>
 </div>
@@ -13,7 +15,7 @@
 <div class="book-usage">
 	<div class="half">
 		<h4>Sass & Stylus Usage</h4>
-		<code><span class="function quiet">[book-name]</span>( <span class="selected-color quiet">[color]</span> )</code>
+		<code><span class="function quiet">[book-name]</span>( "<span class="selected-color quiet">[color]</span>" )</code>
 	</div>
 	<div class="half">
 		<h4>LESS Usage</h4>
@@ -22,7 +24,9 @@
 </div>
 
 <div class="book-viewer">
-	
+	<div class="introduction">
+		<h2>Select a color book, then a color to find out how to use it in Colorly!</h2>
+	</div>
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -64,7 +68,8 @@ $(function(){
 		if ( typeof book !== 'undefined' ) {
 			$( '.book-viewer' ).load( 'book/'+book+'.html', function(){
 				$( '.function' ).html( book ).removeClass( 'quiet' );
-				
+				$( '.selected-color' ).html( '[color]' ).addClass( 'quiet' );
+
 				$( '.book-viewer .swatch' ).click(function(){
 					$( '.selected-color' ).html( $(this).html() ).removeClass( 'quiet' );
 					show_usage();

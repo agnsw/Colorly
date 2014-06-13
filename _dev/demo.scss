@@ -1,12 +1,14 @@
 
 
 // some maths
-$usage_height_768: 220px;
-$usage_height_960: 140px;
+$usage_height_narrow: 220px;
+$usage_height_wide: 140px;
 
 $usage_left_768: 30%;
 $usage_left_1220: 20%;
 
+
+$green: #00a500;
 
 
 /// basic font stuffs
@@ -54,13 +56,13 @@ body {
 		padding-left: $usage_left_768;
 
 		&.with-usage {
-			padding-top: $usage_height_768;
+			padding-top: $usage_height_narrow;
 		}
 	}
 
-	@include respond-to( 960px ) {
+	@include respond-to( 1024px ) {
 		&.with-usage {
-			padding-top: $usage_height_960;
+			padding-top: $usage_height_wide;
 		}
 	}
 
@@ -92,39 +94,71 @@ body {
 		margin: 0;
 		list-style: none;
 	
-		li a {
-			display: block;
-			padding: 12px;
-			font-weight: 700;
-			color: #888;
-			border-bottom: 1px solid #eee;
-			cursor: pointer;
-			transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
-			-webkit-transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
-
-			span {
-				font-weight: 300;
-				font-size: .85em;
-				opacity: .7;
+		li {
+			a {
 				display: block;
-			}
+				padding: 12px;
+				font-weight: 700;
+				color: #888;
+				border-bottom: 1px solid #eee;
+				cursor: pointer;
+				transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
+				-webkit-transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
 
-			&:hover {
-				color: #eee;
-				background: #666;
-			}
-
-			&.book-usage-toggle {
-				display: none;
-
-				@include respond-to( 768px ) {
+				span {
+					font-weight: 300;
+					font-size: .85em;
+					opacity: .7;
 					display: block;
-					background-color: #ddd;
-					color: #444;
-					font-size: 12px;
-					text-transform: uppercase;
-					text-align: center;
 				}
+
+				&:hover {
+					color: #eee;
+					background: #666;
+				}
+
+				&.book-usage-toggle {
+					display: none;
+
+					@include respond-to( 768px ) {
+						display: block;
+						background-color: #ddd;
+						color: #444;
+						font-size: 12px;
+						text-transform: uppercase;
+						text-align: center;
+					}
+				}
+
+				&.download {
+					background-color: $green;
+					color: white;
+					text-shadow: 1px 1px 0 darken( $green, 10% );
+					text-decoration: none;
+					text-transform: uppercase;
+					font-size: 16px;
+					padding: 20px;
+					text-align: center;
+					transition: background-color 300ms ease-in-out, color 300ms, ease-in-out, text-shadow 300ms, ease-in-out;
+					-webkit-transition: background-color 300ms ease-in-out, color 300ms, ease-in-out, text-shadow 300ms, ease-in-out;
+					
+					@include respond-to( 1024px ) {
+						font-size: 18px;
+					}
+
+					&:hover {
+						background: lighten( $green, 5% );
+						text-shadow: 2px 2px 20px darken( $green, 15% );
+					}
+				}
+			}
+
+			&.label {
+				color: #999;
+				font-size: 12px;
+				text-align: center;
+				padding: 6px;
+				border-bottom: 1px solid #eee;
 			}
 		}
 	}
@@ -149,7 +183,7 @@ body {
 		overflow: hidden;
 
 		&.visible {
-			height: $usage_height_768;
+			height: $usage_height_narrow;
 		}
 
 		h4 {
@@ -161,7 +195,7 @@ body {
 		}
 
 		code {
-			color: #62a70f;
+			color: $green;
 		}
 
 		.quiet {
@@ -173,10 +207,10 @@ body {
 		}
 	}
 
-	@include respond-to( 960px ) {
+	@include respond-to( 1024px ) {
 		
 		&.visible {
-			height: $usage_height_960;
+			height: $usage_height_wide;
 		}
 
 		.half {
@@ -259,3 +293,29 @@ body {
 
 }
 
+
+.introduction {
+	padding: 20px;
+
+	h2 {
+		color: #999;
+		font-size: 50px;
+		font-weight: 300;
+	}
+
+	@include respond-to( 480px ) {
+		padding: 40px;
+	}
+
+	@include respond-to( 768px ) {
+		padding: 50px;
+	}
+
+	@include respond-to( 1024px ) {
+		padding: 50px 90px;
+	}
+
+	@include respond-to( 1220px ) {
+		padding: 50px 130px;
+	}
+}
