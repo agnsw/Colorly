@@ -1,6 +1,6 @@
 {
   "name": "colorly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description" : "Comprehensive library of color books from several color systems - implemented in Sass, LESS, Stylus, JSON, and CSV.",
   "ignore" : ["_dev",".gitignore","Gruntfile.js","package.json","bower.json","package.json"],
   "repository": {
