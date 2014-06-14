@@ -51,6 +51,7 @@ body {
 	margin: 0;
 	@include font;
 	transition: padding-top 500ms ease-in-out;
+	-webkit-transition: padding-top 500ms ease-in-out;
 
 	@include respond-to( 768px ) {
 		padding-left: $usage_left_768;
@@ -102,8 +103,12 @@ body {
 				color: #888;
 				border-bottom: 1px solid #eee;
 				cursor: pointer;
-				transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
-				-webkit-transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
+				
+				// nix transitions on small screens
+				@include respond-to( 1025px ) {
+					transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
+					-webkit-transition: background-color 300ms ease-in-out, color 300ms, ease-in-out;
+				}
 
 				span {
 					font-weight: 300;
@@ -131,7 +136,7 @@ body {
 				}
 
 				&.download {
-					background-color: $green;
+					background-color: #aaa;
 					color: white;
 					text-shadow: 1px 1px 0 darken( $green, 10% );
 					text-decoration: none;
@@ -139,11 +144,11 @@ body {
 					font-size: 16px;
 					padding: 20px;
 					text-align: center;
-					transition: background-color 300ms ease-in-out, color 300ms, ease-in-out, text-shadow 300ms, ease-in-out;
-					-webkit-transition: background-color 300ms ease-in-out, color 300ms, ease-in-out, text-shadow 300ms, ease-in-out;
 					
 					@include respond-to( 1024px ) {
 						font-size: 18px;
+						transition: background-color 300ms ease-in-out, color 300ms, ease-in-out, text-shadow 300ms, ease-in-out;
+						-webkit-transition: background-color 300ms ease-in-out, color 300ms, ease-in-out, text-shadow 300ms, ease-in-out;
 					}
 
 					&:hover {
@@ -253,19 +258,19 @@ body {
 	}
 
 	@include respond-to( 600px ) {
-		padding: 50px 0;
+		padding: 60px 0;
 		width: 33%;
 	}
 
-	@include respond-to( 840px ) {
+	@include respond-to( 768px ) {
 		width: 25%;
 	}
 
-	@include respond-to( 960px ) {
+	@include respond-to( 1024px ) {
 		width: 20%;
 	}
 
-	@include respond-to( 1024px ) {
+	@include respond-to( 1150px ) {
 		width: 16.6666%;
 	}
 
