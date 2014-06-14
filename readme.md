@@ -16,9 +16,13 @@ Install the `colorly` npm module or bower component - or just clone this repo an
 
 ## Usage
 
+In the interest of keeping the readme simple, there are wiki pages for each preprocessor to describe usage and note any specific requirements.
+
 #### [Sass](https://github.com/jpederson/Colorly/wiki/Sass)
 #### [Stylus](https://github.com/jpederson/Colorly/wiki/Stylus)
 #### [LESS](https://github.com/jpederson/Colorly/wiki/LESS)
+
+There are also CSV and JSON formats in the repository if you need to access the colors as raw data for other use cases.
 
 
 ## Contribute! [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
