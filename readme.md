@@ -49,7 +49,7 @@ bower install colorly
 ##### NPM [![NPM version](https://badge.fury.io/js/colorly.svg)](http://badge.fury.io/js/colorly)
 
 ```shell
-npm install Colorly
+npm install colorly
 ```
 
 ##### Git [![GitHub version](https://badge.fury.io/gh/jpederson%2Fcolorly.svg)](http://badge.fury.io/gh/jpederson%2Fcolorly)
