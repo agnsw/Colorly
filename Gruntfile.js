@@ -21,6 +21,10 @@ module.exports = function(grunt) {
 				files: ['test/less/*.less'],
 				tasks: ['less']
 			},
+			uglify: {
+				files: ['_dev/demo.js'],
+				tasks: ['uglify']
+			},
 			build: {
 				files: ['_dev/book.*','_dev/index.html','json/*.json','build.*'],
 				tasks: ['shell:build','less','sass','stylus']
@@ -48,7 +52,7 @@ module.exports = function(grunt) {
 
 		// compile stylus
 		stylus: {
-			compile: {
+			dist: {
 				files: {
 					'test/stylus/test.css': 'test/stylus/test.styl'
 				}
@@ -58,7 +62,7 @@ module.exports = function(grunt) {
 
 		// compile less
 		less: {
-			compile: {
+			dist: {
 				options: {
 					compress: true,
 				},
@@ -69,7 +73,21 @@ module.exports = function(grunt) {
 		},
 
 
-		// generate the sass and html files with node scripts
+		// let's squish some js
+		uglify: {
+			dist: {
+				files: {
+					'demo.js': [
+						'node_modules/jquery/dist/jquery.js',
+						'node_modules/fastclick/lib/fastclick.js',
+						'_dev/demo.js'
+					]
+				}
+			}
+		},
+
+
+  		// generate the sass and html files with node scripts
 		shell: {
 			build: {
 				command: './build.sh'

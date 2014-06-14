@@ -5,15 +5,20 @@
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
+  "author": "James Pederson",
+  "license": "MIT",
+  "repository": "https://github.com/jpederson/Colorly",
+  "dependencies": {
+    "fastclick": "~1.0.2",
+    "jquery": "~1.11.1"
+  },
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-sass": "*",
     "grunt-contrib-stylus": "*",
     "grunt-contrib-less": "*",
     "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
     "grunt-shell": "*",
     "matchdep": "*"
   }
