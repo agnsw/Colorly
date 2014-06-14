@@ -33,6 +33,32 @@ A comprehensive library of color books from Pantone, ANPA, HKS, Focoltone, DIC, 
 
 *****
 
+### Installation
+
+I've tried to make it as easy as possible to install Colorly:
+
+##### Bower
+
+```shell
+bower install colorly
+```
+
+##### NPM
+
+```shell
+npm install Colorly
+```
+
+##### Git
+
+```shell
+git clone https://github.com/jpederson/Colorly
+```
+
+Or, you know - the download button on the right or any of the versions linked in the "Releases" tab.
+
+*****
+
 ### Sass
 
 You'll need everything in the `scss/` folder and Sass 3.1.0+ (since we're using a custom function).
