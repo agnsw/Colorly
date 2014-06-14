@@ -12,10 +12,8 @@ var dir_tpl = "_dev/";
 var files = JSON.parse( fs.readFileSync( dir_tpl+"books.json", "utf8" ) );
 
 // open the book template files
-var tpl_html = fs.readFileSync( dir_tpl+"book.html", "utf8" );
 var tpl_stylus = fs.readFileSync( dir_tpl+"book.styl", "utf8" );
 var tpl_scss = fs.readFileSync( dir_tpl+"book.scss", "utf8" );
-var tpl_less = fs.readFileSync( dir_tpl+"book.less", "utf8" );
 
 // open the index template files
 var tpl_index = fs.readFileSync( dir_tpl+"index.html", "utf8" );
@@ -108,8 +106,7 @@ var do_file = function( key ) {
 
 		// write out the index.html file
 		fs.writeFile( 
-			'book/'+filename+'.html', 
-			tpl_html.replace( "{{colors}}", records_html.join("\n") ), function( err ){
+			'book/'+filename+'.html', records_html.join("\n"), function( err ){
 
 			if (err) throw err;
 			console.log('> book/'+filename+'.html created...');
@@ -141,8 +138,7 @@ var do_file = function( key ) {
 
 
 		// write out the LESS book file
-		fs.writeFile( 'less/book-'+filename+'.less', 
-			tpl_less.replace( "{{colors}}", records_less.join("\n") ), 
+		fs.writeFile( 'less/book-'+filename+'.less', "// "+filename+"\n"+records_less.join("\n"), 
 			function( err ){
 				if (err) throw err;
 				console.log('> less/book-'+filename+'.less created...');
