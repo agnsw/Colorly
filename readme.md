@@ -7,11 +7,9 @@ It contains over 21,000 colors from these color books: **Pantone** (Solid Coated
 #### [About the Color Books](https://github.com/jpederson/Colorly/wiki/Color-Books)
 
 
-## Installation
+## Installation [![Bower version](https://badge.fury.io/bo/colorly.svg)](http://badge.fury.io/bo/colorly) [![NPM version](https://badge.fury.io/js/colorly.svg)](http://badge.fury.io/js/colorly)
 
 Install the `colorly` npm module or bower component - or just clone this repo and include it your own way. For more information on installing, check out the [Installation](https://github.com/jpederson/Colorly/wiki/Installation) page on the wiki.
-
-[![Bower version](https://badge.fury.io/bo/colorly.svg)](http://badge.fury.io/bo/colorly) [![NPM version](https://badge.fury.io/js/colorly.svg)](http://badge.fury.io/js/colorly)
 
 
 ## Usage
