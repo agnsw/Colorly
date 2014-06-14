@@ -2,11 +2,10 @@
 
 A comprehensive library of color books from Pantone, ANPA, HKS, DIC, Focoltone, TOYO, and TRUMATCH - implemented in Sass, LESS, Stylus, JSON, and CSV. 
 
-It contains over 21,000 colors from these color books: Pantone (Solid Coated & Uncoated), Pantone+ (CMYK Coated/Uncoated, Color Bridge Coated/Uncoated, Metallic Coated, Pastels & Neons Coated/Uncoated, Premium Metallics Coated, Solid Coated/Uncoated), ANPA, DIC, Focoltone, HKS (E Process, E, K Process, K, N Process, N, Z Process, Z), TOYO (94 Color Finder, Original Color Finder), and TRUMATCH.
+It contains over 21,000 colors from these color books: **Pantone** (Solid Coated & Uncoated), **Pantone+** (CMYK Coated/Uncoated, Color Bridge Coated/Uncoated, Metallic Coated, Pastels & Neons Coated/Uncoated, Premium Metallics Coated, Solid Coated/Uncoated), **ANPA**, **DIC**, **Focoltone**, **HKS** (E Process, E, K Process, K, N Process, N, Z Process, Z), **TOYO** (94 Color Finder, Original Color Finder), and **TRUMATCH**.
 
 #### [About the Color Books](https://github.com/jpederson/Colorly/wiki/Color-Books)
 
-*****
 
 ## Installation
 
@@ -14,15 +13,13 @@ Install the `colorly` npm module or bower component - or just clone this repo an
 
 [![Bower version](https://badge.fury.io/bo/colorly.svg)](http://badge.fury.io/bo/colorly) [![NPM version](https://badge.fury.io/js/colorly.svg)](http://badge.fury.io/js/colorly)
 
-*****
 
 ## Usage
 
-- [Sass](https://github.com/jpederson/Colorly/wiki/Sass)
-- [Stylus](https://github.com/jpederson/Colorly/wiki/Stylus)
-- [LESS](https://github.com/jpederson/Colorly/wiki/LESS)
+#### [Sass](https://github.com/jpederson/Colorly/wiki/Sass)
+#### [Stylus](https://github.com/jpederson/Colorly/wiki/Stylus)
+#### [LESS](https://github.com/jpederson/Colorly/wiki/LESS)
 
-*****
 
 ## Contribute! [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
