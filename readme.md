@@ -1,35 +1,38 @@
-# [Colorly](http://colorly.us)
+# [Colorly](http://colorly.us) [![GitHub version](https://badge.fury.io/gh/jpederson%2Fcolorly.svg)](http://badge.fury.io/gh/jpederson%2Fcolorly)
 
 A comprehensive library of color books from Pantone, ANPA, HKS, Focoltone, DIC, TOYO, and TRUMATCH - implemented in Sass, LESS, Stylus, JSON, and CSV. Contains a total of 21,652 colors from the following color books:
 
+- Pantone (original)
+  - Solid Coated
+  - Solid Uncoated
+- Pantone+
+  - CMYK Coated
+  - CMYK Uncoated
+  - Color Bridge Coated 
+  - Color Bridge Uncoated
+  - Metallic Coated
+  - Pastels & Neons Coated
+  - Pastels & Neons Uncoated
+  - Premium Metallics Coated
+  - Solid Coated
+  - Solid Uncoated
 - ANPA
 - DIC
 - Focoltone
-- HKS E Process
-- HKS E
-- HKS K Process
-- HKS K
-- HKS N Process
-- HKS N 
-- HKS Z Process
-- HKS Z
-- Pantone+ CMYK Coated
-- Pantone+ CMYK Uncoated
-- Pantone+ Color Bridge Coated 
-- Pantone+ Color Bridge Uncoated
-- Pantone+ Metallic Coated
-- Pantone+ Pastels & Neons Coated
-- Pantone+ Pastels & Neons Uncoated
-- Pantone+ Premium Metallics Coated
-- Pantone+ Solid Coated
-- Pantone+ Solid Uncoated
-- Pantone Solid Coated
-- Pantone Solid Uncoated
+- HKS 
+  - E Process
+  - E
+  - K Process
+  - K
+  - N Process
+  - N
+  - Z Process
+  - Z
 - TOYO 94 Color Finder
 - TOYO Color Finder
 - TRUMATCH
 
-**Note:** All color books are property of their respective owners, and they are not responsible for your experience with this library.
+**Note:** All color books are the property of their respective owners, and they are not responsible for your experience with this library.
 
 *****
 
@@ -37,19 +40,19 @@ A comprehensive library of color books from Pantone, ANPA, HKS, Focoltone, DIC, 
 
 I've tried to make it as easy as possible to install Colorly:
 
-##### Bower
+##### Bower [![Bower version](https://badge.fury.io/bo/colorly.svg)](http://badge.fury.io/bo/colorly)
 
 ```shell
 bower install colorly
 ```
 
-##### NPM
+##### NPM [![NPM version](https://badge.fury.io/js/colorly.svg)](http://badge.fury.io/js/colorly)
 
 ```shell
 npm install Colorly
 ```
 
-##### Git
+##### Git [![GitHub version](https://badge.fury.io/gh/jpederson%2Fcolorly.svg)](http://badge.fury.io/gh/jpederson%2Fcolorly)
 
 ```shell
 git clone https://github.com/jpederson/Colorly
