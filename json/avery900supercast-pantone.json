@@ -1,0 +1,402 @@
+[
+    {
+        "name": "Avery 100 C",
+        "label": "100-c",
+        "hex": "#f7ef7d"
+    },
+    {
+        "name": "Avery Yellow C",
+        "label": "yellow-c",
+        "hex": "#fbd500"
+    },
+    {
+        "name": "Avery 109 C",
+        "label": "109-c",
+        "hex": "#f7ce00"
+    },
+    {
+        "name": "Avery 123 C",
+        "label": "123-c",
+        "hex": "#fac629"
+    },
+    {
+        "name": "Avery 124 C",
+        "label": "124-c",
+        "hex": "#e6a900"
+    },
+    {
+        "name": "Avery 155 C",
+        "label": "155-c",
+        "hex": "#f1daae"
+    },
+    {
+        "name": "Avery 137 C",
+        "label": "137-c",
+        "hex": "#f69d00"
+    },
+    {
+        "name": "Avery 151 C",
+        "label": "151-c",
+        "hex": "#f17600"
+    },
+    {
+        "name": "Avery 165 C",
+        "label": "165-c",
+        "hex": "#f0630a"
+    },
+    {
+        "name": "Avery Orange 021 C",
+        "label": "orange-021-c",
+        "hex": "#f05b00"
+    },
+    {
+        "name": "Avery Warm Red C",
+        "label": "warm-red-c",
+        "hex": "#e5482c"
+    },
+    {
+        "name": "Avery 179 C",
+        "label": "179-c",
+        "hex": "#dc3d2c"
+    },
+    {
+        "name": "Avery 169 C",
+        "label": "169-c",
+        "hex": "#ffbbae"
+    },
+    {
+        "name": "Avery Red 032 C",
+        "label": "red-032-c",
+        "hex": "#da3d3d"
+    },
+    {
+        "name": "Avery 185 C",
+        "label": "185-c",
+        "hex": "#d93c44"
+    },
+    {
+        "name": "Avery 186 C",
+        "label": "186-c",
+        "hex": "#cc293c"
+    },
+    {
+        "name": "Avery 193 C",
+        "label": "193-c",
+        "hex": "#b90e34"
+    },
+    {
+        "name": "Avery 200 C",
+        "label": "200-c",
+        "hex": "#bd203b"
+    },
+    {
+        "name": "Avery 201 C",
+        "label": "201-c",
+        "hex": "#94222e"
+    },
+    {
+        "name": "Avery 188 C",
+        "label": "188-c",
+        "hex": "#7a2831"
+    },
+    {
+        "name": "Avery 209 C",
+        "label": "209-c",
+        "hex": "#6f2939"
+    },
+    {
+        "name": "Avery 189 C",
+        "label": "189-c",
+        "hex": "#f5aabf"
+    },
+    {
+        "name": "Avery 207 C",
+        "label": "207-c",
+        "hex": "#a51238"
+    },
+    {
+        "name": "Avery 220 C",
+        "label": "220-c",
+        "hex": "#a31c50"
+    },
+    {
+        "name": "Avery 208 C",
+        "label": "208-c",
+        "hex": "#8d2542"
+    },
+    {
+        "name": "Avery 211 C",
+        "label": "211-c",
+        "hex": "#f387b7"
+    },
+    {
+        "name": "Avery 254 C",
+        "label": "254-c",
+        "hex": "#913498"
+    },
+    {
+        "name": "Avery 292 C",
+        "label": "292-c",
+        "hex": "#7bbbe4"
+    },
+    {
+        "name": "Avery 279 C",
+        "label": "279-c",
+        "hex": "#639dde"
+    },
+    {
+        "name": "Avery 290 C",
+        "label": "290-c",
+        "hex": "#c6ddea"
+    },
+    {
+        "name": "Avery 285 C",
+        "label": "285-c",
+        "hex": "#2d89d3"
+    },
+    {
+        "name": "Avery 293 C",
+        "label": "293-c",
+        "hex": "#005fb7"
+    },
+    {
+        "name": "Avery 541 C",
+        "label": "541-c",
+        "hex": "#004371"
+    },
+    {
+        "name": "Avery 281 C",
+        "label": "281-c",
+        "hex": "#003069"
+    },
+    {
+        "name": "Avery 297 C",
+        "label": "297-c",
+        "hex": "#8cd3f1"
+    },
+    {
+        "name": "Avery 299 C",
+        "label": "299-c",
+        "hex": "#15aedb"
+    },
+    {
+        "name": "Avery 542 C",
+        "label": "542-c",
+        "hex": "#629cc6"
+    },
+    {
+        "name": "Avery 301 C",
+        "label": "301-c",
+        "hex": "#005c93"
+    },
+    {
+        "name": "Avery 540 C",
+        "label": "540-c",
+        "hex": "#003253"
+    },
+    {
+        "name": "Avery 307 C",
+        "label": "307-c",
+        "hex": "#0080b4"
+    },
+    {
+        "name": "Avery 549 C",
+        "label": "549-c",
+        "hex": "#629eaf"
+    },
+    {
+        "name": "Avery 308 C",
+        "label": "308-c",
+        "hex": "#006281"
+    },
+    {
+        "name": "Avery 302 C",
+        "label": "302-c",
+        "hex": "#004d71"
+    },
+    {
+        "name": "Avery 548 C",
+        "label": "548-c",
+        "hex": "#004653"
+    },
+    {
+        "name": "Avery 317 C",
+        "label": "317-c",
+        "hex": "#c4e7e6"
+    },
+    {
+        "name": "Avery 326 C",
+        "label": "326-c",
+        "hex": "#00b7ac"
+    },
+    {
+        "name": "Avery 320 C",
+        "label": "320-c",
+        "hex": "#00a2a9"
+    },
+    {
+        "name": "Avery 315 C",
+        "label": "315-c",
+        "hex": "#007388"
+    },
+    {
+        "name": "Avery 321 C",
+        "label": "321-c",
+        "hex": "#008a8c"
+    },
+    {
+        "name": "Avery 327 C",
+        "label": "327-c",
+        "hex": "#008873"
+    },
+    {
+        "name": "Avery 328 C",
+        "label": "328-c",
+        "hex": "#007966"
+    },
+    {
+        "name": "Avery 340 C",
+        "label": "340-c",
+        "hex": "#00935d"
+    },
+    {
+        "name": "Avery 341 C",
+        "label": "341-c",
+        "hex": "#007b50"
+    },
+    {
+        "name": "Avery 343 C",
+        "label": "343-c",
+        "hex": "#13543b"
+    },
+    {
+        "name": "Avery 351 C",
+        "label": "351-c",
+        "hex": "#afe4bd"
+    },
+    {
+        "name": "Avery 354 C",
+        "label": "354-c",
+        "hex": "#00ad36"
+    },
+    {
+        "name": "Avery 368 C",
+        "label": "368-c",
+        "hex": "#6db80b"
+    },
+    {
+        "name": "Avery 347 C",
+        "label": "347-c",
+        "hex": "#00a04c"
+    },
+    {
+        "name": "Avery 355 C",
+        "label": "355-c",
+        "hex": "#00962a"
+    },
+    {
+        "name": "Avery 348 C",
+        "label": "348-c",
+        "hex": "#00883f"
+    },
+    {
+        "name": "Avery 349 C",
+        "label": "349-c",
+        "hex": "#006d37"
+    },
+    {
+        "name": "Avery 877 C",
+        "label": "877-c",
+        "hex": "#9da1a2"
+    },
+    {
+        "name": "Avery 428 C",
+        "label": "428-c",
+        "hex": "#cccfcd"
+    },
+    {
+        "name": "Avery 429 C",
+        "label": "429-c",
+        "hex": "#b0b4b3"
+    },
+    {
+        "name": "Avery 430 C",
+        "label": "430-c",
+        "hex": "#8e9495"
+    },
+    {
+        "name": "Avery 431 C",
+        "label": "431-c",
+        "hex": "#697176"
+    },
+    {
+        "name": "Avery 432 C",
+        "label": "432-c",
+        "hex": "#4f575c"
+    },
+    {
+        "name": "Avery 873 C",
+        "label": "873-c",
+        "hex": "#8a6c39"
+    },
+    {
+        "name": "Avery 423 C",
+        "label": "423-c",
+        "hex": "#929490"
+    },
+    {
+        "name": "Avery 424 C",
+        "label": "424-c",
+        "hex": "#7c7d7a"
+    },
+    {
+        "name": "Avery 404 C",
+        "label": "404-c",
+        "hex": "#776f62"
+    },
+    {
+        "name": "Avery 410 C",
+        "label": "410-c",
+        "hex": "#7a6a62"
+    },
+    {
+        "name": "Avery 425 C",
+        "label": "425-c",
+        "hex": "#5c5d5b"
+    },
+    {
+        "name": "Avery 468 C",
+        "label": "468-c",
+        "hex": "#e0d8bb"
+    },
+    {
+        "name": "Avery 466 C",
+        "label": "466-c",
+        "hex": "#cbba8b"
+    },
+    {
+        "name": "Avery 472 C",
+        "label": "472-c",
+        "hex": "#e3a06f"
+    },
+    {
+        "name": "Avery 471 C",
+        "label": "471-c",
+        "hex": "#b5571b"
+    },
+    {
+        "name": "Avery 154 C",
+        "label": "154-c",
+        "hex": "#955207"
+    },
+    {
+        "name": "Avery 470 C",
+        "label": "470-c",
+        "hex": "#954a1a"
+    },
+    {
+        "name": "Avery 469 C",
+        "label": "469-c",
+        "hex": "#5b301c"
+    }
+]

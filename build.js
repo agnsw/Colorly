@@ -10,6 +10,10 @@ var dir_tpl = "_dev/";
 
 // set up a list of the files we'll create.
 var files = JSON.parse( fs.readFileSync( dir_tpl+"books.json", "utf8" ) );
+var file_title = [];
+files.forEach(function( file_info ){
+	file_title[file_info.filename] = file_info.title;
+});
 
 // open the book template files
 var tpl_stylus = fs.readFileSync( dir_tpl+"book.styl", "utf8" );
@@ -28,16 +32,26 @@ var files_stylus = [],
 
 
 
-// Loop through our files, limiting the number to process at once
-var do_file = function( key ) {
+// directory location
+var dir = 'json/';
 
-	// if the file exists in our files array.
-	if ( files[key] ) {
 
-		var filename = files[key].filename;
+// loop through the directory
+fs.readdir( dir, function( err, files ){
+
+    // throw an error if applicable
+    if ( err ) throw err;
+
+    var total = 0;
+
+    // loop through the files in the directory
+    files.forEach(function( file ){
+
+    	// 
+    	var filename = file.replace( '.json', '' );
 
 		// open the file
-		var records = JSON.parse( fs.readFileSync( "json/"+filename+".json", "utf8" ) );
+		var records = JSON.parse( fs.readFileSync( "json/"+file, "utf8" ) );
 
 
 		// some empty arrays for our colors
@@ -51,7 +65,7 @@ var do_file = function( key ) {
 		// start logging
 		console.log( "" );
 		console.log( "-------------------------------------------------------------------" );
-		console.log( "  Book: "+files[key].title );
+		console.log( "  Book: " + file );
 		console.log( "-------------------------------------------------------------------" );
 
 
@@ -61,8 +75,6 @@ var do_file = function( key ) {
 
 		// loop through all the colors in this file.
 		records.forEach(function( color ){
-
-			var hex = color.hex.replace( '/' )
 
 			// push another line of html
 			records_html.push( '<div class="swatch" style="background-color: '+color.hex+';"><span>'+color.label+'</span></div>' );
@@ -80,127 +92,86 @@ var do_file = function( key ) {
 
 
 		// stylus files
-		files_less.push( "\n// " + files[key].title + '\n@import "book-'+filename+'.less";' );
+		files_less.push( "\n// " + file_title[filename] + '\n@import "book-'+filename+'.less";' );
 
 		// stylus files
-		files_scss.push( "\n// " + files[key].title + '\n@import "book-'+filename+'";' );
+		files_scss.push( "\n// " + file_title[filename] + '\n@import "book-'+filename+'";' );
 
 		// stylus files
-		files_stylus.push( "\n// " + files[key].title + '\n@import "book-'+filename+'.styl"' );
+		files_stylus.push( "\n// " + file_title[filename] + '\n@import "book-'+filename+'.styl"' );
 
 		// stylus files
-		files_index.push( '<li><a rel="' + filename + '">' + files[key].title + ' <span>' + records.length + ' colors</span></a></li>' );
+		files_index.push( '<li><a rel="' + filename + '">' + file_title[filename] + ' <span>' + records.length + ' colors</span></a></li>' );
+
+
+		// dump a color count for each book
+		console.log( " > Colors in File: " + records_csv.length );
+		total = total + records_csv.length;
 
 
 		// write out the csv file
-		fs.writeFile( 
-			"csv/"+filename+".csv", 
-			records_csv.join( "\n" ), 
-			function( err ) {
-				if ( err ) throw err;
-				console.log( "> csv/"+filename+".csv created..." );
-			}
-		);
-
+		fs.writeFileSync( "csv/"+filename+".csv", records_csv.join( "\n" ) );
+		console.log( " > csv/"+filename+".csv created..." );
 
 
 		// write out the index.html file
-		fs.writeFile( 
-			'book/'+filename+'.html', records_html.join("\n"), function( err ){
-
-			if (err) throw err;
-			console.log('> book/'+filename+'.html created...');
-
-		});
-
+		fs.writeFileSync( 'book/'+filename+'.html', records_html.join("\n") )
+		console.log(' > book/'+filename+'.html created...');
 
 
 		// write out the Sass book file
-		fs.writeFile( 'scss/_book-'+filename+'.scss', 
-			tpl_scss.replace( "{{colors}}", records_scss.join(", ") ).replace( /\{\{var_name\}\}/g, var_name ).replace( "{{fn_name}}", filename ), 
-			function( err ){
-				if (err) throw err;
-				console.log('> scss/_book-'+filename+'.scss created...');
-			}
-		);
-
+		fs.writeFileSync( 'scss/_book-'+filename+'.scss', tpl_scss
+			.replace( "{{colors}}", records_scss.join(", ") )
+			.replace( /\{\{var_name\}\}/g, var_name )
+			.replace( "{{fn_name}}", filename ), 
+		console.log(' > scss/_book-' + filename + '.scss created...') );
 
 
 		// write out the Stylus book file
-		fs.writeFile( 'stylus/book-'+filename+'.styl', 
-			tpl_stylus.replace( "{{colors}}", records_scss.join(" ") ).replace( /\{\{var_name\}\}/g, var_name ).replace( "{{fn_name}}", filename ), 
-			function( err ){
-				if (err) throw err;
-				console.log('> stylus/book-'+filename+'.styl created...');
-			}
-		);
-
+		fs.writeFileSync( 'stylus/book-'+filename+'.styl', tpl_stylus
+			.replace( "{{colors}}", records_scss.join(" ") )
+			.replace( /\{\{var_name\}\}/g, var_name )
+			.replace( "{{fn_name}}", filename ) );
+		console.log(' > stylus/book-'+filename+'.styl created...');
 
 
 		// write out the LESS book file
-		fs.writeFile( 'less/book-'+filename+'.less', "// "+filename+"\n"+records_less.join("\n"), 
-			function( err ){
-				if (err) throw err;
-				console.log('> less/book-'+filename+'.less created...');
-			}
-		);
+		fs.writeFile( 'less/book-'+filename+'.less', "// "+filename+"\n"+records_less.join("\n") ); 
+		console.log(' > less/book-'+filename+'.less created...');
+		
+
+    });
 
 
-		// delay a tiny bit before grabbing the next file
-		setTimeout(function(){
-			do_file( key+1 );
-		}, 20 );
-
-	
-	} else {
-
-		// once we're done creating book files, generate
-		// the index file after another short delay.
-		setTimeout(function(){
-			
-			// start outputting main file generation progress
-			console.log( "" );
-			console.log( "-------------------------------------------------------------------" );
-			console.log( "  Main Files" );
-			console.log( "-------------------------------------------------------------------" );
-			
-
-			// write out the Sass book file
-			fs.writeFile( 'scss/_colorly.scss', files_scss.join("\n"), function( err ){
-				if (err) throw err;
-				console.log('> scss/_colorly.scss created...');
-			});
+	// start outputting main file generation progress
+	console.log( "" );
+	console.log( "-------------------------------------------------------------------" );
+	console.log( "  Main Files" );
+	console.log( "-------------------------------------------------------------------" );
 
 
-			// write out the Stylus book file
-			fs.writeFile( 'stylus/colorly.styl', files_stylus.join("\n"), function( err ){
-				if (err) throw err;
-				console.log('> stylus/colorly.styl created...');
-			});
+	// dump the total colors
+	console.log( " > Total Colors: " + total );
 
 
-			// write out the LESS book file
-			fs.writeFile( 'less/colorly.less', files_less.join("\n"), function( err ){
-				if (err) throw err;
-				console.log('> less/colorly.less created...');
-			});
+	// write out the Sass book file
+	fs.writeFile( 'scss/_colorly.scss', files_scss.join("\n") );
+	console.log(' > scss/_colorly.scss created...');
 
 
-			// write out the LESS book file
-			fs.writeFile( 'index.html', tpl_index.replace( "{{colors}}", files_index.join("\n") ), function( err ){
-				if (err) throw err;
-				console.log('> less/colorly.less created...');
-			});
-
-		}, 20 );
-
-	}
-
-};
+	// write out the Stylus book file
+	fs.writeFile( 'stylus/colorly.styl', files_stylus.join("\n") );
+	console.log(' > stylus/colorly.styl created...');
 
 
+	// write out the LESS book file
+	fs.writeFile( 'less/colorly.less', files_less.join("\n") );
+	console.log(' > less/colorly.less created...');
 
-// aaaand start the loop
-do_file( 0 );
 
+	// write out the LESS book file
+	fs.writeFile( 'index.html', tpl_index.replace( "{{colors}}", files_index.join("\n") ) );
+	console.log(' > index.html created...');
+
+});
 

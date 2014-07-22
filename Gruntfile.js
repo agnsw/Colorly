@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 				tasks: ['uglify']
 			},
 			build: {
-				files: ['_dev/book.*','_dev/index.html','json/*.json','build.*'],
+				files: ['_dev/book*','_dev/index.html','json/*.json','build.*'],
 				tasks: ['shell:build','less','sass','stylus']
 			},
 			tests: {
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
   		// generate the sass and html files with node scripts
 		shell: {
 			build: {
-				command: './build.sh'
+				command: 'rm ./scss/* | rm ./less/* | rm ./stylus/* | rm ./book/* | rm ./csv/* | ./build.sh'
 			},
 			test: {
 				command: 'mocha'
